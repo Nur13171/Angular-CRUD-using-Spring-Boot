@@ -1,0 +1,39 @@
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    <!-- Student Name -->
+    <div class="form-group">
+      <label for="studentName">Name:</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+  
+    <!-- Student Email -->
+    <div class="form-group">
+      <label for="studentEmail">Email:</label>
+      <input type="email" class="form-control" formControlName="email">
+    </div>
+  
+    <!-- Student Date of Birth -->
+    <div class="form-group">
+      <label for="studentDOB">Date of Birth:</label>
+      <input type="date" class="form-control" formControlName="dob">
+    </div>
+  
+    <!-- Student Gender -->
+    <div class="form-group">
+      <label for="studentGender">Gender:</label>
+      <select class="form-control" formControlName="gender" name="gender" >
+        <option [ngValue]="'Male'">Male</option>
+        <option [ngValue]="'Female'">Female</option>
+        <option [ngValue]="'Others'">Other</option>
+    </select>
+    </div>
+  
+    <!-- Student Address -->
+    <div class="form-group">
+      <label for="studentAddress">Address:</label>
+      <textarea class="form-control" formControlName="address" rows="3"></textarea>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
+  

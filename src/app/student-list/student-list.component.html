@@ -1,0 +1,28 @@
+<!-- Responsive Bootstrap Table -->
+<div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#SL</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.dob | date: 'dd/MM/yyyy'}}</td>
+                <td>{{student.gender}}</td>
+                  <td class="text-center">
+                    <a [routerLink]="['/student/edit', student.id]"  class="btn btn-sm btn-primary me-2">Edit</a>
+                    <a (click)="delete(student.id)" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,45 @@
+<form [formGroup] = "studentForm" (ngSubmit) = "onSubmit()">
+    <!-- Student Name -->
+    <div class="form-group">
+        <label for="studentName">Name:</label>
+        <input type="text" [ngClass]="{'is-invalid': studentForm.get('name')?.hasError('required') && studentForm.get('name')?.touched}" class="form-control"  formControlName="name" placeholder="Enter your name">
+        <span class="text-danger" *ngIf="studentForm.get('name')?.hasError('required') && studentForm.get('name')?.touched">
+            Name field is required.
+          </span>
+    </div>
+
+    <!-- Student Email -->
+    <div class="form-group">
+        <label for="studentEmail">Email:</label>
+        <input type="email" [ngClass]="{'is-invalid': studentForm.get('email')?.hasError('required') && studentForm.get('email')?.touched}" class="form-control"  formControlName="email" placeholder="Enter your email">
+        <span class="text-danger" *ngIf="studentForm.get('email')?.hasError('required') && studentForm.get('email')?.touched">
+            Email field is required.
+          </span>
+    </div>
+
+    <!-- Student Date of Birth -->
+    <div class="form-group">
+        <label for="studentDOB">Date of Birth:</label>
+        <input type="date" class="form-control" formControlName = "dob">
+    </div>
+
+    <!-- Student Gender -->
+    <div class="form-group">
+        <label for="studentGender">Gender:</label>
+        <select class="form-control" formControlName="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <!-- Student Address -->
+    <div class="form-group">
+        <label for="studentAddress">Address:</label>
+        <textarea class="form-control" formControlName="address"   rows="3"
+            placeholder="Enter your address"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="studentForm.invalid" class="btn btn-primary mt-3">Submit</button>
+</form>

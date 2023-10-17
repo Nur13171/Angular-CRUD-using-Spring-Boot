@@ -1,0 +1,7 @@
+.navbar-nav li a.active
+{
+    background-color: #3c6382;
+    color: #f1f2f6;
+    font-weight: 500;
+    border-radius: 10px;
+}
